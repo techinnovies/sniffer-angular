@@ -5,7 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-prod-patch": "npm version && ng build --prod --build-optimizer --output-hashing=all && node ./replace.build.js && node ./versioning.build.js"
+    "build-prod-patch": "npm version && ng build --prod --build-optimizer --output-hashing=all && node ./replace.build.js && node ./versioning.build.js",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -46,5 +47,9 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.1.2"
+  },
+  "engines": {
+    "node": "12.18.0",
+    "npm": "6.14.11"
   }
 }
